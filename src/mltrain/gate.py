@@ -7,5 +7,6 @@ def check(body):
         raise InputError("body must be an object")
     failed = []
 
-    for key in ("dataset", "trainer", "evaluator"):\n        if not body.get(key): failed.append(f"missing_{key}")
+    for key in ("dataset", "trainer", "evaluator"):
+        if not body.get(key): failed.append(f"missing_{key}")
     return {"passed": not failed, "failed": failed, "applied": False}
