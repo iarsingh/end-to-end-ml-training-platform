@@ -1,5 +1,12 @@
 # End-to-End ML Training Platform
 
+## Overview
+
+A readiness gate for an ML training pipeline. The `/check` endpoint passes only when a dataset, a trainer and an evaluator are all present, so a run with a missing stage is not treated as complete. The result always reports `applied` as false. A `/v1` ops API adds workspaces, tenant isolation, job approval and audit records, and tests cover both the gate and the ops API.
+
+- **Built with:** Python, pytest, Docker, Docker Compose, GitHub Actions
+- **Scope:** Local laptop proof with tests; it checks for pipeline stages rather than running training, and production apply is refused.
+
 <!-- project-guide:start -->
 ## Project guide
 
